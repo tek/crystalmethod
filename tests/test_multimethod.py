@@ -4,13 +4,14 @@ __author__ = 'roke'
 
 import unittest
 
-class MultimethodTestCase(unittest.TestCase):
 
+class MultimethodTestCase(unittest.TestCase):
 
     def test_multimethods(self):
         "Multimethod are actually dispatched"
 
         from multimethods import multimethod
+
         class A(object):
 
             @multimethod(int, int)
@@ -39,16 +40,14 @@ class MultimethodTestCase(unittest.TestCase):
         self.assertEqual(x.foo("1", "2"), 'str, str')
         self.assertEqual(x.foo(5), "a>3")
         self.assertEqual(x.foo(1), "a<=3")
-
-
         with self.assertRaises(ValueError):
             x.foo(3, 4.5)
-
 
     def test_multimethod_class_instance(self):
         "The class instance is addressed by the multimethod"
 
         from multimethods import multimethod
+
         class A(object):
 
             def __init__(self, c):
@@ -57,7 +56,6 @@ class MultimethodTestCase(unittest.TestCase):
             @multimethod(int, int)
             def foo(self, a, b):
                 return self.c + a + b
-
 
         x = A(3)
         self.assertEqual(x.foo(1, 2), 6)
@@ -127,5 +125,5 @@ class MultimethodTestCase(unittest.TestCase):
         with self.assertRaises(TypeError) as cm:
             multimethod(int, invalid_arg=False)
 
-        self.assertEqual(str(cm.exception), self.get_reference_exception_message())
-
+        self.assertEqual(str(cm.exception),
+                         self.get_reference_exception_message())
