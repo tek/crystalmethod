@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
     name = "multimethods",
-    version = "1.0.0",
+    version = "1.0.1",
     author = "Robert Kende",
     author_email = "robert.kende@gmail.com",
     description = ("A simple python multidispatch."),
