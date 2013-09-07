@@ -13,7 +13,7 @@ setup(
     license = "MIT",
     keywords = "multimethods, multidispatch, dispatch, decorator",
     url = "http://packages.python.org/multimethods",
-    packages=['multimethods', 'tests'],
+    packages=['multimethods'],
     long_description=read('README'),
     test_suite='tests',
     classifiers=[
