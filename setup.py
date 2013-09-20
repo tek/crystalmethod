@@ -6,15 +6,15 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name="multimethods",
-    version="1.0.1",
+    name="crystalmethod",
+    version="3.0.0",
     author="Robert Kende",
     author_email="robert.kende@gmail.com",
     description=("A simple python multidispatch."),
     license="MIT",
-    keywords="multimethods, multidispatch, dispatch, decorator",
-    url="http://packages.python.org/multimethods",
-    packages=['multimethods'],
+    keywords="crystalmethod, multidispatch, dispatch, decorator",
+    url="http://packages.python.org/crystalmethod",
+    packages=['crystalmethod'],
     long_description=read('README'),
     test_suite='tests',
     classifiers=[

@@ -1,16 +1,16 @@
 __author__ = 'roke'
 
-"""Tests for multimethods."""
+"""Tests for crystalmethod."""
 
 import unittest
 
 
 class MultimethodTestCase(unittest.TestCase):
 
-    def test_multimethods(self):
+    def test_crystalmethod(self):
         "Multimethod are actually dispatched"
 
-        from multimethods import multimethod
+        from crystalmethod import multimethod
 
         class A(object):
 
@@ -46,7 +46,7 @@ class MultimethodTestCase(unittest.TestCase):
     def test_multimethod_class_instance(self):
         "The class instance is addressed by the multimethod"
 
-        from multimethods import multimethod
+        from crystalmethod import multimethod
 
         class A(object):
 
@@ -72,7 +72,7 @@ class MultimethodTestCase(unittest.TestCase):
         "Multimethods work on instances of subclasses too"
 
         from numbers import Number
-        from multimethods import multimethod
+        from crystalmethod import multimethod
 
         @multimethod(Number)
         def isnumber(x):
@@ -90,7 +90,7 @@ class MultimethodTestCase(unittest.TestCase):
     def test_multimethod_function(self):
         "The multimethod works on functions"
 
-        from multimethods import multimethod
+        from crystalmethod import multimethod
 
         @multimethod(int, int)
         def foo(a, b):
