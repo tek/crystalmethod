@@ -101,7 +101,9 @@ class multimethod(object):
                         l = dict(zip(argspec.args, args))
                         if eval(condition, globals(), l):
                             return function(*args, **kw)
-            raise ValueError("multimethod: no matching method found")
+            msg = 'multimethod: no matching method found for types "{}"'
+            _types = ', '.join([type(arg).__name__ for arg in args])
+            raise ValueError(msg.format(_types))
 
     def __call__(self, function):
         import inspect
